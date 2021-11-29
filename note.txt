@@ -1,0 +1,5 @@
+- Posso criar um contato com algum campo vazio? ou todos devem ser preencchidos?
+
+- todo: 
+	- verificar inserção de novo contato
+	- lista vazia recebendo index
