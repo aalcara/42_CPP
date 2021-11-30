@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 18:51:55 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/11/29 10:41:47 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/11/30 09:23:26 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,23 @@ void	add_contact(PhoneBook *phonebook)
 
 	std::cout << "ADD CONTACT:" << std::endl;
 	std::cout << "First name: ";
-	getline(std::cin, first_name);
+	while (first_name.empty())
+		getline(std::cin, first_name);
 	std::cout << "Last name: ";
-	getline(std::cin, last_name);
+	while (last_name.empty())
+		getline(std::cin, last_name);
 	std::cout << "Nickname: ";
-	getline(std::cin, nickname);
+	while (nickname.empty())
+		getline(std::cin, nickname);
 	std::cout << "Phone number: ";
-	getline(std::cin, phone_number);
+	while (phone_number.empty())
+		getline(std::cin, phone_number);
 	std::cout << "Darkest secret: ";
-	getline(std::cin, darkest_secret);
+	while (darkest_secret.empty())
+		getline(std::cin, darkest_secret);
 	phonebook->addContact(first_name, last_name, nickname, phone_number,
 		darkest_secret);
+	std::cout << "CONTACT ADDED!" << std::endl;
 }
 
 void	show_list(PhoneBook phonebook)
@@ -96,4 +102,5 @@ int	main(void)
 			std::cout << "INVALID COMMAND!" << std::endl;
 		}
 	}
+	return (0);
 }
