@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 21:19:06 by aalcara-          #+#    #+#              #
-#    Updated: 2021/11/30 12:56:36 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/12/01 09:59:00 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJ)
 	@echo "$@ created!" 
 
 run: $(NAME)
-	@./$(NAME) > templog.log
+	@./$(NAME)
 
 all: $(NAME)
 	@echo "[$(NAME)] created!"

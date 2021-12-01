@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:58:47 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/11/30 12:47:48 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/01 10:19:44 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,9 +140,6 @@ void	Account::_displayTimestamp(void)
 	std::cout << std::setfill('0') << std::setw(2) << timeinfo->tm_min;
 	std::cout << std::setfill('0') << std::setw(2) << timeinfo->tm_sec << "]";
 	return ;
-
-	//std::cout << "[19920104_091532]";
-	//return ;
 }
 
 Account::Account(void)
