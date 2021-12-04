@@ -6,18 +6,19 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 13:46:02 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/04 15:28:12 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/04 15:51:56 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie *newZombie(std::string);
+Zombie *newZombie(std::string name);
 void randomChump(std::string name);
 
 int	main(void)
 {
-	Zombie z1("Steve");
+	Zombie z1;
+	z1.setName("Steve");
 	z1.announce();
 
 	Zombie *nz1;

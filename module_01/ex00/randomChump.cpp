@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 14:40:37 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/04 15:27:41 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/04 15:53:08 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void randomChump( std::string name)
 {
-	Zombie zombie(name);
-
+	Zombie zombie;
+	zombie.setName(name);
 	zombie.announce();
 	return ;
 }

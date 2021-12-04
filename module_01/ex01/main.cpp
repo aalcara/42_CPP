@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 14:08:54 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/04 15:52:41 by aalcara-         ###   ########.fr       */
+/*   Created: 2021/12/04 13:46:02 by aalcara-          #+#    #+#             */
+/*   Updated: 2021/12/04 16:10:21 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie *newZombie(std::string name)
+Zombie* zombieHorde( int N, std::string name );
+
+int	main(void)
 {
-	Zombie* ptr_zombie = new Zombie;
-	ptr_zombie->setName(name);
-	return (ptr_zombie);
+	Zombie z1;
+	z1.setName("Steve");
+	z1.announce();
+
+	Zombie *hz1;
+	hz1 = zombieHorde(10, "Huge Jackman");
+	delete []hz1;
+
+	Zombie *hz2;
+	hz2 = zombieHorde(3, "Jason");
+	delete []hz2;
+
+	return (0);
 }
