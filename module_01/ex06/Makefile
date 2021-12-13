@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/11 14:09:33 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/12/13 12:33:19 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = karenFilter
 SRC = main.cpp Karen.cpp
 OBJ = $(SRC:.cpp=.o)
 
-CPP = c++
+CPP = clang++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -fr

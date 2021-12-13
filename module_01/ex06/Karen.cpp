@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:57:53 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/11 14:24:56 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:44:18 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,41 @@ Karen::~Karen( void )
 void	Karen::complain( std::string level )
 {
 	std::string levels[4] = {"DEBUG", "INFO","WARNING", "ERROR"};
-
 	void (Karen::*PtrFunc[4])(void) = {
 	&Karen::debug,
 	&Karen::info,
 	&Karen::warning,
 	&Karen::error
 	};
-	for (int i = 0; i < 4; i++)
+	int i;
+
+	i = 0;
+	while (i < 4 && levels[i] != level)
+		i++;
+	while (i < 5)
 	{
-		if (level == levels[i])
+		switch (i)
 		{
-			(this->*PtrFunc[i])();
+			case 0:
+				(this->*PtrFunc[i])();
+				i++;
+				break;
+			case 1:
+				(this->*PtrFunc[i])();
+				i++;
+				break;
+			case 2:
+				(this->*PtrFunc[i])();
+				i++;
+				break;
+			case 3:
+				(this->*PtrFunc[i])();
+				return ;
+			default:
+				std::cout << MSG_INSIGNIFICANT << std::endl;
+				return ;
 		}
+		
 	}
 	return ;
 }

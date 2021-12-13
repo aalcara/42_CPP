@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:57:49 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/10 10:52:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/13 12:26:07 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 #include <string>
 #include <iostream>
 
+#define MSG_USAGE "Usage: ./karenFilter [message]"
 #define MSG_DEBUG "[DEBUG]: I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!"
 #define MSG_INFO "[INFO]: I cannot believe adding extra bacon cost more money. You don’t put enough! If you did I would not have to ask for it!"
 #define MSG_WARNING "[WARNING]: I think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month."
 #define MSG_ERROR "[ERROR]: This is unacceptable, I want to speak to the manager now."
+#define MSG_INSIGNIFICANT "[ Probably complaining about insignificant problems ]"
 
 class Karen
 {
