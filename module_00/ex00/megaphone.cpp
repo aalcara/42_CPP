@@ -6,13 +6,12 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:19:11 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/11/28 13:43:09 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/13 22:43:46 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 int	main(int argc, char *argv[])
 {
