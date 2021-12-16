@@ -6,13 +6,14 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/15 12:29:11 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/12/15 12:32:26 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karenFilter
+NAME = fixed
 
-SRC = main.cpp Karen.cpp
+SRC = main.cpp Fixed.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 CPP = c++
@@ -27,7 +28,7 @@ $(NAME): $(SRC)
 all: $(NAME)
 
 run: all
-	@./$(NAME) $(ARGS)
+	@./$(NAME)
 
 clean:
 	@$(RM) $(OBJ)
