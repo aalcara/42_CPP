@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:23:13 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/30 16:26:03 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:27:54 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,34 @@
 # define FIXED_H
 
 #include <iostream>
+#include <string.h>
 
 class Fixed
 {
 	private:
 
 	// Atributes
-		int					_raw_bits;
-		static const int	_frac_bits;
+			std::string *ptr;
 	// Methods
 
 	public:
 	// Constructor & Destructor
-		Fixed(void);
-		~Fixed(void);
+		Fixed(std::string str);
 		Fixed(const Fixed &MyObject);
+		~Fixed(void);
+
+
 	// Atributes
 
+
 	// Methods
-		Fixed	&operator= (Fixed const &MyObject);
-		int		getRawBits(void)const;
-		void	setRawBits(int const raw);
+		std::string getString(void);
+		std::string *getPointer(void);
 		
+
+
+
+
 };
 
 #endif

@@ -6,50 +6,42 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/30 16:25:51 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/15 12:36:07 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Fixed.hpp"
 
-const int Fixed::_frac_bits = 8;
-
-Fixed::Fixed(void)
+Fixed::Fixed(std::string str)
 {
-	std::cout << "Default Constructor Called" << std::endl;
-	this->setRawBits(0);
+	this->ptr = new std::string;
+	this->ptr->append(str);
+	std::cout << "Constructor" << std::endl;
+	return ;
+}
+
+Fixed::Fixed(const Fixed &MyObject)
+{
+	this->ptr = new std::string;
+	if (MyObject.ptr != NULL)
+		this->ptr->append(*MyObject.ptr);
+	std::cout << "Copy Constructor" << std::endl;
 	return ;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	delete (this->ptr);
+	std::cout << "Destructor" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &MyObject)
+std::string Fixed::getString(void)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	Fixed::operator=(MyObject);
-	return ;
+	return (*this->ptr);
 }
 
-Fixed &Fixed::operator= (Fixed const &MyObject)
+std::string *Fixed::getPointer(void)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	this->_raw_bits = MyObject.getRawBits();
-	return (*this);
+	return (this->ptr);
 }
-
-int Fixed::getRawBits(void)const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_raw_bits);
-}
-
-void Fixed::setRawBits(int const raw)
-{
-	this->_raw_bits = raw;
-	return ;
-}
-

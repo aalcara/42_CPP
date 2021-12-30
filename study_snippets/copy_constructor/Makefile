@@ -6,11 +6,11 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/30 15:31:58 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/12/15 12:32:26 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = fixed
 
 SRC = main.cpp Fixed.cpp
 

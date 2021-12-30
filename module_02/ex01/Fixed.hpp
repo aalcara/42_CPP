@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:23:13 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/30 16:26:03 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/30 18:20:14 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,18 @@ class Fixed
 	public:
 	// Constructor & Destructor
 		Fixed(void);
-		~Fixed(void);
 		Fixed(const Fixed &MyObject);
+		Fixed(const int nbr);
+		Fixed(const float nbr);
+		~Fixed(void);
 	// Atributes
 
 	// Methods
 		Fixed	&operator= (Fixed const &MyObject);
 		int		getRawBits(void)const;
 		void	setRawBits(int const raw);
+		float	toFloat( void ) const;
 		
 };
-
+std::ostream &operator<< (std::ostream &os, const Fixed &f);
 #endif

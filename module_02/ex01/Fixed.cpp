@@ -6,12 +6,13 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/30 16:25:51 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/30 18:26:25 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Fixed.hpp"
+#include <cmath>
 
 const int Fixed::_frac_bits = 8;
 
@@ -22,16 +23,30 @@ Fixed::Fixed(void)
 	return ;
 }
 
-Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
-}
-
 Fixed::Fixed(const Fixed &MyObject)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	Fixed::operator=(MyObject);
 	return ;
+}
+
+Fixed::Fixed(const int nbr)
+{
+	std::cout << "Int Constructor Called" << std::endl;
+	this->_raw_bits = nbr << Fixed::_frac_bits;
+	return ;
+}
+
+Fixed::Fixed(const float nbr)
+{
+	std::cout << "Float Constructor Called" << std::endl;
+	this->_raw_bits = roundf(nbr * (1 << Fixed::_frac_bits));
+	return ;
+}
+
+Fixed::~Fixed(void)
+{
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator= (Fixed const &MyObject)
@@ -53,3 +68,16 @@ void Fixed::setRawBits(int const raw)
 	return ;
 }
 
+float Fixed::toFloat( void ) const
+{
+	float	value;
+
+	value = (float)((float)this->_raw_bits / (float)(1 << Fixed::_frac_bits));
+	return (value);
+}
+
+std::ostream &operator<< (std::ostream &os, const Fixed &f)
+{
+	os << f.toFloat();
+	return (os);
+}
