@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/04 15:58:53 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/12/30 15:11:34 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,11 @@ all: $(NAME)
 
 run: $(NAME)
 	@./zombie
+
+valgrind:	$(OBJ)
+	$(CPP) $(OBJ) $(CPPFLAGS) $(L_FLAGS) -o $(NAME)
+	@echo "[$(NAME)] created!"
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME)
 
 clean:
 	@$(RM) $(OBJ)

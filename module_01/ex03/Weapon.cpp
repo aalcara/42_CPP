@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 23:27:56 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/09 08:38:19 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/30 15:16:50 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ Weapon::Weapon(std::string a_type)
 	setType(a_type);
 	return ;
 }
-
-// Weapon::Weapon(void)
-// {
-// 	return ;
-// }
 
 Weapon::~Weapon(void)
 {
