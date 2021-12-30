@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 21:19:06 by aalcara-          #+#    #+#              #
-#    Updated: 2021/11/29 09:45:17 by aalcara-         ###   ########.fr        #
+#    Updated: 2021/12/30 14:54:03 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,13 @@ RM = rm -fr
 
 $(NAME): $(OBJ)
 	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@echo "[$(NAME)] created!"
 
 %.o: %.cpp
 	@$(CPP) $(CPPFLAGS) -c $< -o $@
 	@echo "$@ created!" 
 
 all: $(NAME)
-	@echo "[$(NAME)] created!"
 
 clean:
 	@$(RM) $(OBJ)
