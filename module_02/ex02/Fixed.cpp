@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/30 20:19:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/12/31 15:54:53 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,14 @@ float Fixed::toFloat( void ) const
 	value = (int)((float)this->_raw_bits / (float)(1 << Fixed::_frac_bits));
 	return (value);
  }
+
+ bool Fixed::operator> (Fixed const &MyObject)
+{
+	std::cout << "> operator called" << std::endl;
+	if (this->_raw_bits > MyObject._raw_bits)
+		return (true);
+	return (false);
+}
 
 std::ostream &operator<< (std::ostream &os, const Fixed &f)
 {
