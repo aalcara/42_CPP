@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 13:46:02 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/09 16:32:16 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:29:05 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ int	main(int argc, char *argv[])
 	std::ofstream	ofs;
 	std::string		file_content;
 	std::string		result;
-	std::string		filename = argv[1];
 
 	if (argc != 4)
 	{
 		std::cout << ERR_NUM_ARGS << std::endl;
 		return (1);
 	}
+	std::string		filename = argv[1];
 	ifs.open(filename.c_str(), std::ifstream::in);
 	if (!ifs.is_open())
 	{

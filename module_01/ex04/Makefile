@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/09 20:23:20 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/01/12 15:26:54 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,18 +26,13 @@ $(NAME): $(SRC)
 
 all: $(NAME)
 
-run: all
-	@./$(NAME) $(ARGS)
-
 test: all
 	@./tester.sh
 
 clean:
-	@$(RM) $(OBJ)
-	@echo "objects removed."
-
-fclean: clean
 	@$(RM) $(NAME)
 	@echo "[$(NAME)] removed."
+
+fclean: clean
 
 re: fclean all

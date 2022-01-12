@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/15 12:29:11 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/01/12 15:37:15 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,13 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -fr
 
-$(NAME): $(SRC)
-	@$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 	@echo "[$(NAME)] created!"
+
+%.o: %.cpp
+	@$(CPP) $(CPPFLAGS) -c $< -o $@
+	@echo "$@ created!" 
 
 all: $(NAME)
 
