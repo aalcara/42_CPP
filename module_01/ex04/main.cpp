@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 13:46:02 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/12 15:29:05 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/01/21 09:01:30 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(int argc, char *argv[])
 	std::ofstream	ofs;
 	std::string		file_content;
 	std::string		result;
+	std::string		temp;
 
 	if (argc != 4)
 	{
@@ -52,7 +53,12 @@ int	main(int argc, char *argv[])
 		std::cout << ERR_OPEN_FILE << std::endl;
 		return (1);
 	}
-	getline(ifs, file_content);
+	file_content = "";
+	while (getline(ifs, temp)) {
+		file_content.append(temp);
+		if (!ifs.eof())
+			file_content.append("\n");
+	}
 	result = get_replaced(file_content, argv);
 	filename.append(".replace");
 	ofs.open(filename.c_str(), std::ofstream::out);

@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 23:42:31 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/08 18:22:51 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/01/20 15:56:26 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ HumanB::~HumanB(void)
 
 void	HumanB::attack(void)
 {
-	std::cout << this->_name << " attacks with his " << this->_weapon->getType()
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType()
 	<< std::endl;
 }
 

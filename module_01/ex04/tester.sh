@@ -190,6 +190,8 @@ function test10(){
 	fi
 }
 
+make
+
 if [ $1 ]
 then
 	if [ $1 -le $NUM_TESTS ]
@@ -207,3 +209,6 @@ else
 	done
 fi
 
+make fclean
+rm tester.txt
+rm tester.txt.replace
