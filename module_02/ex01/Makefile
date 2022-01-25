@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 13:59:39 by aalcara-          #+#    #+#              #
-#    Updated: 2021/12/30 15:31:58 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/01/25 15:51:49 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,18 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -fr
 
-$(NAME): $(SRC)
-	@$(CPP) $(CPPFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 	@echo "[$(NAME)] created!"
 
+%.o: %.cpp
+	@$(CPP) $(CPPFLAGS) -c $< -o $@
+	@echo "$@ created!"
+
 all: $(NAME)
+
+valgrind:	$(NAME)
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME)
 
 run: all
 	@./$(NAME)

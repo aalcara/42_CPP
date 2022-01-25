@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/06 16:09:40 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:46:44 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,64 @@ int Fixed::toInt( void ) const
 bool Fixed::operator> (Fixed const &MyObject) const
 {
 	// std::cout << "> operator called" << std::endl;
-	if (_raw_bits > MyObject._raw_bits)
+	if (this->_raw_bits > MyObject._raw_bits)
 		return (true);
 	return (false);
+}
+
+bool Fixed::operator< (Fixed const &MyObject) const
+{
+	// std::cout << "< operator called" << std::endl;
+	if (this->_raw_bits < MyObject._raw_bits)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator>= (Fixed const &MyObject) const
+{
+	// std::cout << ">= operator called" << std::endl;
+	if (this->_raw_bits >= MyObject._raw_bits)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<= (Fixed const &MyObject) const
+{
+	// std::cout << "<= operator called" << std::endl;
+	if (this->_raw_bits <= MyObject._raw_bits)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator== (Fixed const &MyObject) const
+{
+	// std::cout << "== operator called" << std::endl;
+	if (this->_raw_bits == MyObject._raw_bits)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator!= (Fixed const &MyObject) const
+{
+	// std::cout << "!= operator called" << std::endl;
+	if (this->_raw_bits != MyObject._raw_bits)
+		return (true);
+	return (false);
+}
+
+
+Fixed &Fixed::operator+ (Fixed const &MyObject)
+{
+	// std::cout << "+ operator called" << std::endl;
+	this->_raw_bits += MyObject._raw_bits;
+	return (*this);
+}
+
+Fixed &Fixed::operator- (Fixed const &MyObject)
+{
+	// std::cout << "- operator called" << std::endl;
+	this->_raw_bits -= MyObject._raw_bits;
+	return (*this);
 }
 
 std::ostream &operator<< (std::ostream &os, const Fixed &f)

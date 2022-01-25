@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/12/30 20:19:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:53:24 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Fixed::~Fixed(void)
 
 Fixed &Fixed::operator= (Fixed const &MyObject)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_raw_bits = MyObject._raw_bits;
 	return (*this);
 }
