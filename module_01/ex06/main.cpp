@@ -6,12 +6,11 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 13:46:02 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/12 15:36:19 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/01/22 14:28:40 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
-#include <map>
 
 int	main(int argc, char **argv)
 {
