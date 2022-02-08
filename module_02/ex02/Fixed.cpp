@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/25 16:46:44 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/02/07 21:24:10 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,18 +132,73 @@ bool Fixed::operator!= (Fixed const &MyObject) const
 	return (false);
 }
 
-
 Fixed &Fixed::operator+ (Fixed const &MyObject)
 {
 	// std::cout << "+ operator called" << std::endl;
-	this->_raw_bits += MyObject._raw_bits;
+	float new_raw_bits;
+	float this_nbr = this->toFloat();
+	float my_nbr = MyObject.toFloat();
+	new_raw_bits = this_nbr + my_nbr;
+	this->_raw_bits = new_raw_bits * (1 << Fixed::_frac_bits);
 	return (*this);
 }
 
 Fixed &Fixed::operator- (Fixed const &MyObject)
 {
 	// std::cout << "- operator called" << std::endl;
-	this->_raw_bits -= MyObject._raw_bits;
+	float new_raw_bits;
+	float this_nbr = this->toFloat();
+	float my_nbr = MyObject.toFloat();
+	new_raw_bits = this_nbr - my_nbr;
+	this->_raw_bits = new_raw_bits * (1 << Fixed::_frac_bits);
+	return (*this);
+}
+
+Fixed &Fixed::operator* (Fixed const &MyObject)
+{
+	// std::cout << "* operator called" << std::endl;
+	float new_raw_bits;
+	float this_nbr = this->toFloat();
+	float my_nbr = MyObject.toFloat();
+	new_raw_bits = this_nbr * my_nbr;
+	this->_raw_bits = roundf(new_raw_bits * (1 << Fixed::_frac_bits));
+	return (*this);
+}
+
+Fixed &Fixed::operator/ (Fixed const &MyObject)
+{
+	// std::cout << "/ operator called" << std::endl;
+	float new_raw_bits;
+	float this_nbr = this->toFloat();
+	float my_nbr = MyObject.toFloat();
+	new_raw_bits = this_nbr / my_nbr;
+	this->_raw_bits = new_raw_bits * (1 << Fixed::_frac_bits);
+	return (*this);
+}
+
+Fixed Fixed::operator++ (int)
+{
+	Fixed old_nbr = (*this);
+	this->_raw_bits += 1;
+	return (old_nbr);
+}
+
+Fixed &Fixed::operator++ ()
+{
+	this->_raw_bits += 1;
+	return (*this);
+}
+
+Fixed Fixed::operator-- (int)
+{
+	Fixed old_nbr = (*this);
+	this->_raw_bits -= 1;
+	return (old_nbr);
+}
+
+Fixed &Fixed::operator-- ()
+{
+	this->_raw_bits -= 1;
 	return (*this);
 }
 

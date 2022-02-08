@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:23:13 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/25 16:46:38 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/02/07 21:31:25 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,14 @@ class Fixed
 		bool	operator<= (Fixed const &MyObject)const;
 		bool	operator== (Fixed const &MyObject)const;
 		bool	operator!= (Fixed const &MyObject)const;
-		Fixed	&operator+ (Fixed const &obj1);
-		Fixed	&operator- (Fixed const &obj1);
+		Fixed	&operator+ (Fixed const &MyObject);
+		Fixed	&operator- (Fixed const &MyObject);
+		Fixed	&operator* (Fixed const &MyObject);
+		Fixed	&operator/ (Fixed const &MyObject);
+		Fixed	operator++ (int);
+		Fixed	&operator++ ();
+		Fixed	operator-- (int);
+		Fixed	&operator-- ();
 
 };
 std::ostream &operator<< (std::ostream &os, const Fixed &f);

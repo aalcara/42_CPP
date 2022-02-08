@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/25 16:05:13 by aalcara-          #+#    #+#              #
-#    Updated: 2022/01/25 16:05:27 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/02/07 19:47:43 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -fr
 
