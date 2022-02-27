@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/02/07 21:24:10 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/02/27 16:24:40 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,38 @@ Fixed &Fixed::operator-- ()
 {
 	this->_raw_bits -= 1;
 	return (*this);
+}
+
+const Fixed &Fixed::min (const Fixed &Obj1, const Fixed &Obj2)
+{
+	if (Obj1.toFloat() < Obj2.toFloat())
+		return (Obj1);
+	else
+		return (Obj2);
+}
+
+Fixed &Fixed::min (Fixed &Obj1, Fixed &Obj2)
+{
+	if (Obj1.toFloat() < Obj2.toFloat())
+		return (Obj1);
+	else
+		return (Obj2);
+}
+
+const Fixed &Fixed::max (const Fixed &Obj1, const Fixed &Obj2)
+{
+	if (Obj1.toFloat() > Obj2.toFloat())
+		return (Obj1);
+	else
+		return (Obj2);
+}
+
+Fixed &Fixed::max (Fixed &Obj1, Fixed &Obj2)
+{
+	if (Obj1.toFloat() > Obj2.toFloat())
+		return (Obj1);
+	else
+		return (Obj2);
 }
 
 std::ostream &operator<< (std::ostream &os, const Fixed &f)
