@@ -7,7 +7,7 @@ ClassName::ClassName()
 
 ClassName::~ClassName()
 {
-
+	
 }
 
 ClassName::ClassName(const ClassName &Obj)
