@@ -3,13 +3,13 @@
 ClassName::ClassName()
 {
 	// std::cout << "Default constructor called" << std::endl;
-	
+	return ;
 }
 
 ClassName::~ClassName()
 {
 	// std::cout << "Destructor called" << std::endl;
-	
+	return ;
 }
 
 ClassName::ClassName(const ClassName &Obj)
@@ -21,6 +21,7 @@ ClassName::ClassName(const ClassName &Obj)
 
 ClassName &ClassName::operator= (ClassName const &Obj)
 {
-	
+	// std::cout << "Assigment operator called" << std::endl;
+	return (*this);
 }
 
