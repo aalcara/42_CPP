@@ -16,7 +16,7 @@ FragTrap::~FragTrap()
 	return ;
 }
 
-FragTrap::FragTrap(const std::string name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string name)
 {
 	std::cout << "FragTrap [" << name << "] constructor called" << std::endl;
 	this->_name = name;

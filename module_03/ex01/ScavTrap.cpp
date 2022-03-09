@@ -16,7 +16,7 @@ ScavTrap::~ScavTrap()
 	return ;
 }
 
-ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(const std::string name)
 {
 	std::cout << "ScavTrap [" << name << "] constructor called" << std::endl;
 	this->_name = name;
