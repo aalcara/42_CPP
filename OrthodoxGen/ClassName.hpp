@@ -5,6 +5,8 @@ class ClassName
 {
 private:
 
+protected:
+
 public:
 	ClassName();
 	~ClassName();
