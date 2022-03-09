@@ -28,7 +28,7 @@ FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &Obj) : ClapTrap(Obj)
 {
-	std::cout << "ScavTrao Copy constructor called" << std::endl;
+	std::cout << "FragTrap Copy constructor called" << std::endl;
 	FragTrap::operator=(Obj);
 	return ;
 }

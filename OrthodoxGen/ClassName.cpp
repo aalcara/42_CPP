@@ -2,11 +2,13 @@
 
 ClassName::ClassName()
 {
+	// std::cout << "Default constructor called" << std::endl;
 	
 }
 
 ClassName::~ClassName()
 {
+	// std::cout << "Destructor called" << std::endl;
 	
 }
 
