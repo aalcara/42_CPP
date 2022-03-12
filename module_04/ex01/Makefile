@@ -6,13 +6,13 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/25 16:05:13 by aalcara-          #+#    #+#              #
-#    Updated: 2022/03/11 19:54:25 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/03/12 09:16:35 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
