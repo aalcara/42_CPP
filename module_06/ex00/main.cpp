@@ -6,11 +6,11 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:24:19 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/03/22 18:37:21 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/03/23 12:00:18 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <iomanip>
 #include "Conversor.hpp"
 
 static bool	valid_args(int argc)
@@ -26,6 +26,8 @@ static bool	valid_args(int argc)
 
 int	main(int argc, char **argv)
 {
+
+
 	if(!valid_args(argc))
 		return (1);
 	Conversor convert(argv[1]);
@@ -36,4 +38,5 @@ int	main(int argc, char **argv)
 	}
 	convert.printResult();
 	return (0);
+	
 }
