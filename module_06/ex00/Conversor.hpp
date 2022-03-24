@@ -4,7 +4,13 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include <climits>
+#include <limits>
+
+#define	LIM_NOT_DEFINED 0
+#define LIM_INT 1
+#define	LIM_FLOAT 2
+#define	LIM_DOUBLE 3
+#define LIM_OVERDOUBLE 4
 
 class Conversor
 {
@@ -19,12 +25,15 @@ private:
 	int			_int;
 	float		_float;
 	double		_double;
+	int			_limit;
 
 	bool	isPseudoLiteral(void);
 	bool	isChar(void);
 	bool	isInt(void);
 	bool	isFloat(void);
 	bool	isDouble(void);
+
+	void	checkLimits(void);
 
 	void	parseInput(void);
 	void	parsePseudo(void);

@@ -13,6 +13,7 @@ Conversor::Conversor(std::string string)
 	this->_cdisplayable = true;
 	this->_cpossible = true;
 	this->_ipossible = true;
+	this->_limit = LIM_NOT_DEFINED;
 	this->_pseudoLit.clear();
 	if(string[0] == '+' && string.length() > 1)
 		this->_src = string.substr(1);
@@ -75,8 +76,9 @@ bool	Conversor::isInt(void)
 				return (false);
 		i++;
 	}
-	double limit_checker = strtod(this->_src.c_str(), NULL);
-	if(limit_checker > INT_MAX || limit_checker < INT_MIN)
+
+	this->checkLimits();
+	if(this->_limit > LIM_INT)
 		return (false);
 	return (true);
 }
@@ -95,7 +97,7 @@ bool	Conversor::isFloat(void)
 		}
 		else if(this->_src[i] == '.')
 		{
-			if(i == 0 || i >= (len - 2 || point))
+			if(i == 0 || i >= (len - 2) || point)
 				return (false);
 			point = true;
 		}
@@ -108,6 +110,10 @@ bool	Conversor::isFloat(void)
 			return (false);
 	}
 	if(this->_src[len - 1] != 'f' || !point)
+		return (false);
+	if(this->_limit == LIM_NOT_DEFINED)
+		this->checkLimits();
+	if(this->_limit > LIM_FLOAT)
 		return (false);
 	return (true);
 }
@@ -126,7 +132,7 @@ bool	Conversor::isDouble(void)
 		}
 		else if(this->_src[i] == '.')
 		{
-			if(i == 0 || i >= (len - 1))
+			if(i == 0 || i >= (len - 1) || point)
 				return (false);
 			point = true;
 		}
@@ -135,7 +141,29 @@ bool	Conversor::isDouble(void)
 	}
 	if(!point)
 		return (false);
+	if(this->_limit == LIM_NOT_DEFINED)
+		this->checkLimits();
+	// if(this->_limit > LIM_DOUBLE)
+	// 	return (false);
 	return (true);
+}
+
+void	Conversor::checkLimits(void)
+{
+	double dlimit_checker = strtod(this->_src.c_str(), NULL);
+	float flimit_checker = strtof(this->_src.c_str(), NULL);
+
+	if(dlimit_checker <= std::numeric_limits<int>::max() && dlimit_checker >= std::numeric_limits<int>::min())
+		this->_limit = LIM_INT;
+	else if(flimit_checker <= std::numeric_limits<float>::max() && flimit_checker >= -std::numeric_limits<float>::max())
+		this->_limit = LIM_FLOAT;
+	else if(dlimit_checker <= std::numeric_limits<double>::max() && dlimit_checker >= -std::numeric_limits<double>::max())
+		this->_limit = LIM_DOUBLE;
+	else
+		this->_limit = LIM_OVERDOUBLE;
+
+
+	return ;
 }
 
 void	Conversor::parseInput(void)
@@ -255,7 +283,11 @@ void	Conversor::printResult(void)
 	else
 		std::cout << "char: '" << this->_char << "'" << std::endl;
 
-	std::cout << "int: " << this->_int << std::endl;
+	if (this->_limit > LIM_INT)
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << this->_int << std::endl;
+
 	std::cout << "float: " << this->_float << "f" << std::endl; 
 	std::cout << "double: " << std::showbase << this->_double << std::endl;
 
