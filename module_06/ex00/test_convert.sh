@@ -213,21 +213,6 @@ double: inf"
 	my_assert_eq "$result" "$expected"
 }
 
-function test_int_overload_inputs
-{
-	log_header "INT Overloads"
-	
-	echo -n "TEST 01 "
-	expected="Invalid input"
-	result=$(./convert 214748364799)
-	my_assert_eq "$result" "$expected"
-
-	echo -n "TEST 02 "
-	expected="Invalid input"
-	result=$(./convert -214748364799)
-	my_assert_eq "$result" "$expected"
-}
-
 function test_floats_doubles_inputs
 {
 	log_header "FLOAT and DOUBLE inputs"
@@ -265,12 +250,36 @@ double: -71.0"
 	my_assert_eq "$result" "$expected"
 }
 
+function test_overload_inputs
+{
+	log_header "Test Overloads"
+	
+	echo -n "TEST 01 "
+	expected="Invalid input"
+	result=$(./convert 214748364799)
+	my_assert_eq "$result" "$expected"
+
+	echo -n "TEST 02 "
+	expected="Invalid input"
+	result=$(./convert -214748364799)
+	my_assert_eq "$result" "$expected"
+
+	echo -n "TEST 03 "
+	expected="char: impossible
+int: impossible
+float: -214748364799.0f
+double: -214748364799.0"
+	result=$(./convert -214748364799.0f)
+	my_assert_eq "$result" "$expected"
+}
+
+
 make
 test_wrong_args
 test_invalid_inputs
 test_char_inputs
 test_int_inputs
 test_pseudoliteral
-test_int_overload_inputs
 test_floats_doubles_inputs
+test_overload_inputs
 make fclean

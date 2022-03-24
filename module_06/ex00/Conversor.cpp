@@ -95,7 +95,7 @@ bool	Conversor::isFloat(void)
 		}
 		else if(this->_src[i] == '.')
 		{
-			if(i == 0 || i >= (len - 2))
+			if(i == 0 || i >= (len - 2 || point))
 				return (false);
 			point = true;
 		}
