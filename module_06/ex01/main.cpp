@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:24:19 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/03/25 17:05:45 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/03/25 17:28:46 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int	main(void)
 	std::cout << "\n-----  deserialized data  -----" << std::endl;
 	endPtr = deserialize(serialized);
 	endPtr->printData();
-
-
 
 	return (0);
 }
