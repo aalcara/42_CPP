@@ -6,7 +6,7 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/25 16:05:13 by aalcara-          #+#    #+#              #
-#    Updated: 2022/03/09 14:23:51 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/04/03 16:24:55 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 RM = rm -fr
 
