@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:22:57 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/03/08 12:45:08 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/03 14:11:38 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 
 int	main(void)
 {
-	// ClapTrap first("test");
-	// ClapTrap third("third");
-	ScavTrap uzbi("Jozias");
+	ScavTrap uzbi("S. Claus");
 	uzbi.takeDamage(5);
 	uzbi.attack("nada");
 	uzbi.beRepaired(10);
@@ -36,13 +34,12 @@ int	main(void)
 	uzbi.beRepaired(2);
 
 	std::cout << "------------" << std::endl;
-	std::cout << "------------" << std::endl;
 
-	FragTrap firstfrag("Avenue");
-	firstfrag.attack("Street");
-	firstfrag.takeDamage(20);
-	firstfrag.beRepaired(20);
-	firstfrag.highFivesGuys();
+	FragTrap trapfrag("Avenue");
+	trapfrag.attack("Street");
+	trapfrag.takeDamage(20);
+	trapfrag.beRepaired(20);
+	trapfrag.highFivesGuys();
 	
 	std::cout << "------------" << std::endl;
 

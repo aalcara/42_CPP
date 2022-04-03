@@ -53,7 +53,6 @@ void ScavTrap::attack(const std::string& target)
 	return ;
 }
 
-
 void	ScavTrap::guardGate()
 {
 	if (!isAlive() || !hasEnergy())
