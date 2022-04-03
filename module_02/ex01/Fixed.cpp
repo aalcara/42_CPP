@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:32:45 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/01/25 15:53:24 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/03 10:33:31 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ float Fixed::toFloat( void ) const
 
  int Fixed::toInt( void ) const
  {
-	 int	value;
+	int	value;
 
 	value = (int)((float)this->_raw_bits / (float)(1 << Fixed::_frac_bits));
 	return (value);
