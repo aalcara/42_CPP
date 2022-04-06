@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:24:19 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/04/05 19:44:13 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:59:42 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,8 @@ int main(int, char **)
 		else
 			std::cout << "|" << std::setw(12) << "-" << std::endl; 
 	}
+
+	Array<int> testvazio;
+	// testvazio = test2;
 	return 0;
 }
