@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:57:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/04/07 18:50:50 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/07 19:03:51 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,16 @@ int	main(void)
 	std::cout << easyfind(myvector, 0) << std::endl;
 	std::cout << easyfind(mydeque, 9) << std::endl;
 	std::cout << easyfind(mylist, 1) << std::endl;
+	std::cout << easyfind(mylist, 5) << std::endl;
+	mylist.reverse();
+	std::cout << easyfind(mylist, 5) << std::endl;
+
+	mylist.pop_back();
 
 	std::cout << "--- Invalid value ---" << std::endl;
 	std::cout << easyfind(myvector, 11) << std::endl;
 	std::cout << easyfind(mydeque, 25) << std::endl;
 	std::cout << easyfind(mylist, 0) << std::endl;
+	std::cout << easyfind(mylist, 1) << std::endl;
 
 }
