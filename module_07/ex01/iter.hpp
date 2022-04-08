@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 09:57:41 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/04/01 18:46:26 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:36:52 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 
 template <typename T>
 void iter(T *addr, size_t len, void (func)(T &member))
+{
+	for(size_t i = 0; i < len; i++)
+	{
+		func(addr[i]);
+	}
+}
+
+template <typename T>
+void iter(T const *addr, size_t len, void (func)(T const &member))
 {
 	for(size_t i = 0; i < len; i++)
 	{
