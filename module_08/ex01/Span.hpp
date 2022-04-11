@@ -4,14 +4,13 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <iterator>
 
 class Span
 {
 private:
-	std::vector<int>	_myvector;
-	unsigned int		_pos;
-
-protected:
+	std::vector<int>			_myvector;
+	std::vector<int>::iterator	_myit;
 
 public:
 	Span();
@@ -23,7 +22,7 @@ public:
 	void	addNumber(int num);
 	int		shortestSpan(void);
 	int		longestSpan(void);
-	void	addRangeNumber(void);
+	void	addRangeNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
 	class OutOfBounds : public std::exception
 	{
