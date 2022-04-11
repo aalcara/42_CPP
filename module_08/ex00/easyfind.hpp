@@ -6,14 +6,12 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:58:01 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/04/07 18:05:48 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:15:56 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASY_HPP
 #define EASY_HPP
-
-// #include <cstddef>
 
 template<typename T>
 int	easyfind(T cont, int ref)

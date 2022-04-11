@@ -6,16 +6,13 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/25 16:05:13 by aalcara-          #+#    #+#              #
-#    Updated: 2022/04/05 18:05:57 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/04/08 15:17:22 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
-
 SRC = main.cpp
-
 OBJ = $(SRC:.cpp=.o)
-
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -fr
