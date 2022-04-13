@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 19:29:05 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/03/18 22:50:51 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:29:41 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &Obj)
 Bureaucrat::Bureaucrat(const std::string name, const int grade): _name(name)
 {
 	// std::cout << "Bureaucrat Parametrized constructor called" << std::endl;
-	try
-	{
-		this->_check_grade(grade);
-		this->_grade = grade;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-		this->_grade = MIN_GRADE;
-	}
+	this->_check_grade(grade);
+	this->_grade = grade;
 	return ;
 }
 
@@ -68,28 +60,14 @@ int	Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::incrementGrade(void)
 {
-	try
-	{
-		this->_check_grade(this->_grade - 1);
-		this->_grade -= 1;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	this->_check_grade(this->_grade - 1);
+	this->_grade -= 1;
 }
 
 void	Bureaucrat::decrementGrade(void)
 {
-	try
-	{
-		this->_check_grade(this->_grade + 1);
-		this->_grade += 1;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	this->_check_grade(this->_grade + 1);
+	this->_grade += 1;
 }
 
 void	Bureaucrat::_check_grade(int grade)
