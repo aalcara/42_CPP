@@ -25,24 +25,24 @@ protected:
 public:
 	Form(void);
 	Form(const std::string name, const int req_sign, const int req_exec);
-	~Form();
+	virtual ~Form();
 	Form(const Form &Obj);
 	Form	&operator= (Form const &Obj);
 
 	class GradeTooHighException: public std::exception
 	{
 		public:
-			virtual const char *what() const throw();
+			const char *what() const throw();
 	};
 	class GradeTooLowException: public std::exception
 	{
 		public:
-			virtual const char *what() const throw();
+			const char *what() const throw();
 	};
 	class FormIsNotSigned: public std::exception
 	{
 		public:
-			virtual const char *what() const throw();
+			const char *what() const throw();
 	};
 
 	std::string		getName(void) const;

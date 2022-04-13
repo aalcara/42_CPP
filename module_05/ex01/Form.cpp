@@ -4,14 +4,7 @@ Form::Form(void): _name("unnamed"), _req_sign(MIN_GRADE), _req_exec(MIN_GRADE),
 _signed(false) 
 {
 	// std::cout << "Form Default constructor called" << std::endl;
-	try
-	{
-		this->_checkFormGrades();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	this->_checkFormGrades();
 	return ;
 }
 
@@ -19,14 +12,7 @@ Form::Form(const std::string name, const int req_sign, const int req_exec):
 _name(name), _req_sign(req_sign), _req_exec(req_exec), _signed(false) 
 {
 	// std::cout << "Form Default constructor called" << std::endl;
-	try
-	{
-		this->_checkFormGrades();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	this->_checkFormGrades();
 	return ;
 }
 
@@ -73,11 +59,8 @@ int	Form::getExecReqGrade(void) const
 void	Form::beSigned(Bureaucrat const &bur)
 {
 	if (bur.getGrade() > this->getSignReqGrade())
-	{
 		throw (Form::GradeTooLowException());
-	}
-	else
-		this->_signed = true;
+	this->_signed = true;
 
 }
 
@@ -106,10 +89,12 @@ std::ostream &operator<<(std::ostream &out, Form &form)
 	"==== FORM: " << form.getName() << " ==== \n" <<
 	"Requires grade " << form.getSignReqGrade() << " to be signed." << "\n" <<
 	"Requires grade " << form.getExecReqGrade() << " to be executed." << "\n";
+	out << "[";
 	if (form.getSigned())
-		out << "[X] Signed" << "\n===================" << std::endl;
+		out << "X";
 	else
-		out << "[ ] Signed" << "\n===================" << std::endl;
+		out << " ";
+	out << "] Signed" << "\n===================" << std::endl;
 	return (out);
 }
 

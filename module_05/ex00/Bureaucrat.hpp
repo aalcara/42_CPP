@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 19:29:02 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/03/15 20:21:01 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/13 15:13:32 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char *what() const throw();
+		const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char *what() const throw();
+		const char *what() const throw();
 	};
 
 	std::string	getName(void) const;

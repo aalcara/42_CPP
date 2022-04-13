@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:22:57 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/04/11 16:32:42 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/13 15:22:24 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,61 +15,6 @@
 
 int	main(void)
 {
-	// {
-	// 	std::cout << "\nTEST1 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 1);
-	// 	std::cout << neo.getGrade() << std::endl;
-	// 	std::cout << neo.getName() << std::endl;
-	// }
-	// {
-	// 	std::cout << "\nTEST2 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 150);
-	// 	std::cout << neo.getGrade() << std::endl;
-	// 	std::cout << neo.getName() << std::endl;
-	// }
-	// {
-	// 	std::cout << "\nTEST3 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 0);
-	// 	std::cout << neo.getGrade() << std::endl;
-	// 	std::cout << neo.getName() << std::endl;
-	// }
-	// {
-	// 	std::cout << "\nTEST4 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 1);
-	// 	std::cout << neo.getGrade() << std::endl;
-	// 	std::cout << neo.getName() << std::endl;
-	// 	neo.incrementGrade();
-	// 	std::cout << neo.getGrade() << std::endl;
-	// 	neo.decrementGrade();
-	// 	std::cout << neo.getGrade() << std::endl;
-	// }
-	// {
-	// 	std::cout << "\nTEST5 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 1);
-	// 	std::cout << neo << std::endl;
-	// 	neo.incrementGrade();
-	// 	std::cout << neo << std::endl;
-	// 	neo.decrementGrade();
-	// 	std::cout << neo << std::endl;
-	// }
-	// {
-	// 	std::cout << "\nTEST6 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 299);
-	// 	std::cout << neo << std::endl;
-	// 	neo.incrementGrade();
-	// 	std::cout << neo << std::endl;
-	// 	neo.decrementGrade();
-	// 	std::cout << neo << std::endl;
-	// }
-	// {
-	// 	std::cout << "\nTEST7 ------------------" << std::endl;
-	// 	Bureaucrat neo("neo", 10);
-	// 	std::cout << neo << std::endl;
-	// 	neo.incrementGrade();
-	// 	std::cout << neo << std::endl;
-	// 	neo.decrementGrade();
-	// 	std::cout << neo << std::endl;
-	// }
 	{
 		std::cout << "\nTEST8 ------------------" << std::endl;
 		Form test("form", 150, 150);
@@ -89,7 +34,14 @@ int	main(void)
 	}
 	{
 		std::cout << "\nTEST10 ------------------" << std::endl;
-		Form test("test", 0, 10);
+		try
+		{
+			Form test("test", 0, 10);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 	{
 		std::cout << "\nTEST11 ------------------" << std::endl;

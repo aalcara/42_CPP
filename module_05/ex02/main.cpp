@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:22:57 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/03/19 12:06:55 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:21:20 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,27 @@
 
 int	main(void)
 {
+	{
+		std::cout << "\nTEST0 ------------------" << std::endl;
+		ShrubberyCreationForm form1("ALVO");
+		Bureaucrat bur("nano", 150);
+		try
+		{
+			form1.beSigned(bur);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			form1.execute(bur);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 	{
 		std::cout << "\nTEST1 ------------------" << std::endl;
 		ShrubberyCreationForm form1("ALVO");
