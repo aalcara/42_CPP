@@ -6,12 +6,12 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 09:57:41 by aalcara-          #+#    #+#             */
-/*   Updated: 2022/04/01 15:46:35 by aalcara-         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:15:01 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEMPLATE_HPP
-#define TEMPLADE_HPP
+#define TEMPLATE_HPP
 
 template <typename T>
 void swap(T &a, T &b)
