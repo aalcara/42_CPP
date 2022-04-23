@@ -6,11 +6,11 @@
 #    By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/25 16:05:13 by aalcara-          #+#    #+#              #
-#    Updated: 2022/04/08 15:17:22 by aalcara-         ###   ########.fr        #
+#    Updated: 2022/04/20 16:37:31 by aalcara-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = ex00
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CPP = c++
